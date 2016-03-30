@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.grailsinaction.UserIntegrationTestSpec" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-03-29T22:37:14" hostname="DESKTOP-CP37IE8" time="8.322">
-  <properties/>
-  <testcase name="Saving our first user to the database" classname="com.grailsinaction.UserIntegrationTestSpec" time="8.322"/>
-  <system-out><![CDATA[Grails application running at http://localhost:8080 in environment: test
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

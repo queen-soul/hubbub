@@ -1,8 +1,0 @@
-.gradle/
-.idea/
-build/
-classes/
-gradle/
-*.asscache
-gradlew.bat
-gradlew
