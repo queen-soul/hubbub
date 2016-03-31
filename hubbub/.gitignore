@@ -3,6 +3,7 @@
 build/
 classes/
 gradle/
+out/
 *.asscache
 gradlew.bat
 gradlew
