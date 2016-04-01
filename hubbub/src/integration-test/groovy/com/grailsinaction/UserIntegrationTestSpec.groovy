@@ -11,8 +11,7 @@ class UserIntegrationTestSpec extends Specification {
 
     def "Saving our first user to the database"() {
         given: "A brand new user"
-        def joe = new User(loginId: 'joe', password: 'secret',
-                homepage: 'http://www.grailsinaction.com')
+        def joe = new User(loginId: 'joe', password: 'secret')
         when: "the user is saved"
         joe.save()
         then: "it saved successfully and can be found in the database"
@@ -23,8 +22,7 @@ class UserIntegrationTestSpec extends Specification {
 
     def "Updating a saved user changes its properties"() {
         given: "An existing user"
-        def existingUser = new User(loginId: 'joe', password: 'secret',
-                         homepage: 'http://www.grailsinaction.com')
+        def existingUser = new User(loginId: 'joe', password: 'secret')
         existingUser.save ( failOnError: true )
         when: "A property is changed"
         def foundUser = User.get(existingUser.id)
@@ -36,8 +34,7 @@ class UserIntegrationTestSpec extends Specification {
 
     def "Deleting an existing user removes it from the database"() {
         given: "An existing user"
-        def user = new User(loginId: 'joe', password: 'secret',
-                homepage: 'http://www.grailsinaction.com')
+        def user = new User(loginId: 'joe', password: 'secret')
         user.save(failOnError: true)
         when: "The user is deleted"
         def foundUser = User.get(user.id)
@@ -56,8 +53,6 @@ class UserIntegrationTestSpec extends Specification {
         user.hasErrors()
         "size.toosmall" == user.errors.getFieldError("password").code
         "tiny" == user.errors.getFieldError("password").rejectedValue
-        "url.invalid" == user.errors.getFieldError("homepage").code
-        "not-a-url" == user.errors.getFieldError("homepage").rejectedValue
         !user.errors.getFieldError("loginId")
     }
 }
