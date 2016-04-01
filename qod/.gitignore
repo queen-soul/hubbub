@@ -1,0 +1,9 @@
+.gradle/
+.idea/
+build/
+classes/
+gradle/
+out/
+*.asscache
+gradlew.bat
+gradlew
