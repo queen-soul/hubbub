@@ -6,7 +6,7 @@ class User {
     String homepage
     Date dateCreated
     static hasOne = [profile : Profile]
-    static hasMany = [posts : Post]
+    static hasMany = [posts : Post, tags : Tag]
 
     static constraints = {
         loginId size:  3..20 , unique: true, nullable: false
@@ -15,5 +15,8 @@ class User {
         }
         homepage url: true, nullable: true
         profile nullable: true
+    }
+    static mapping = {
+       posts sort: 'dateCreated'
     }
 }
