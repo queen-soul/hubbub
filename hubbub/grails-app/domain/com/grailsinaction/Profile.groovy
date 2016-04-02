@@ -20,4 +20,9 @@ class Profile {
         timezone nullable: true
         jabberAddress email: true, nullable: true
     }
+
+    // for Logging purposes
+    String toString() { return "Profile of $fullName (id:$id)" }
+
+    String getDisplayString() { return fullName }
 }
