@@ -17,4 +17,19 @@ class User {
     static mapping = {
        posts sort: 'dateCreated'
     }
+
+    def search(){}
+
+    def results(String loginId){
+        def users = User.where {
+            loginId =~ "%${loginId}%"
+        }.list()
+        return [
+                users :users,
+                term : loginId,
+                totalUsers : User.count()
+        ]
+    }
+
+    String toString() { return loginId }
 }

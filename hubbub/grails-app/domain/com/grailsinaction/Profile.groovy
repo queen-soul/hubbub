@@ -23,6 +23,4 @@ class Profile {
 
     // for Logging purposes
     String toString() { return "Profile of $fullName (id:$id)" }
-
-    String getDisplayString() { return fullName }
 }
